@@ -9,5 +9,6 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: "NixOS/nixpkgs"
+      - uses: cachix/install-nix-action@v13
       - run: cd pkgs/development/node-packages/
       - run: ls -al
