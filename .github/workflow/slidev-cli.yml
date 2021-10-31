@@ -1,0 +1,11 @@
+name: "nixpkgs - @slidev/cli"
+on: [push]
+
+jobs:
+  runs-on: ubuntu-latest
+  steps:
+    - name: Check out nixpkgs repo.
+      uses: actions/checkout@v2
+      with:
+        repository: "NixOS/nixpkgs"
+    - run: ls -al
