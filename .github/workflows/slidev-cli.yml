@@ -12,6 +12,6 @@ jobs:
       - uses: cachix/install-nix-action@v13
       - run: |
           cd pkgs/development/node-packages/
-          sed -i '12i, "@slidev/cli"'node-packages.json
+          sed -i '12i, "@slidev/cli"' node-packages.json
           ./generate.sh
       - run: ls -al
