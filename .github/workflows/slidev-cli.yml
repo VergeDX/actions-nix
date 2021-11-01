@@ -14,7 +14,6 @@ jobs:
           cd pkgs/development/node-packages/
           sed -i '12i, "@slidev/cli"' node-packages.json
           ./generate.sh
-      - run: apt install git
       - run: git diff > slidev-cli-nixpkgs.patch
       - uses: actions/upload-artifact@v2
         with:
