@@ -36,7 +36,7 @@ stdenv.mkDerivation rec {
   '';
 
   nativeBuildInputs = [ python3 cmake ]
-    ++ (with python3Packages; [ numpy pybind11 ])
+    ++ (with python3Packages; [ numpy pybind11 setuptools ])
     ++ lib.singleton fixed_onnx;
   dontUsePytestCheck = true;
   buildInputs = [ zlib ];

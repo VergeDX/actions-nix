@@ -2,7 +2,7 @@ name: "Run - nix-build"
 on: [push]
 
 jobs:
-  NixOS-nixpkgs-NodeJS:
+  Run-nix-build:
     runs-on: ubuntu-latest
     steps:
       - name: Check out nixpkgs repo.
