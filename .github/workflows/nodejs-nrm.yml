@@ -1,5 +1,8 @@
 name: "NixOS/nixpkgs - NodeJS"
-on: [push]
+on:
+  create:
+    tags:
+      - v*
 
 jobs:
   NixOS-nixpkgs-NodeJS:
