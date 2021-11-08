@@ -1,0 +1,11 @@
+name: "Run - nix-build"
+on: [push]
+
+jobs:
+  NixOS-nixpkgs-NodeJS:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out nixpkgs repo.
+        uses: actions/checkout@v2
+      - uses: cachix/install-nix-action@v13
+      - run: nix-build -E '(import <nixpkgs> { }).callPackage ./onnxruntime.nix { }'
