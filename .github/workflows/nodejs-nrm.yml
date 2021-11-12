@@ -1,8 +1,5 @@
 name: "NixOS/nixpkgs - NodeJS"
-on:
-  create:
-    tags:
-      - v*
+on: [push]
 
 jobs:
   NixOS-nixpkgs-NodeJS:
@@ -15,7 +12,7 @@ jobs:
       - uses: cachix/install-nix-action@v13
       - run: |
           cd pkgs/development/node-packages/
-          sed -i '206i, "nrm"' node-packages.json
+          sed -i '210i, "nrm"' node-packages.json
           ./generate.sh
       - run: git diff > NixOS-nixpkgs.patch
       - uses: actions/upload-artifact@v2

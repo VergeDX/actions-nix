@@ -1,5 +1,8 @@
 name: "Run - nix-build"
-on: [push]
+on:
+  create:
+    tags:
+      - v*
 
 jobs:
   Run-nix-build:
