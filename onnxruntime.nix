@@ -1,14 +1,4 @@
 { stdenv, fetchgit, python3, cmake, zlib, python3Packages, substituteAll, lib, ... }:
-let
-  # https://github.com/NixOS/nixpkgs/issues/138338
-  fixed_onnx = python3Packages.onnx.override {
-    nbval = python3Packages.nbval.overrideAttrs (old: {
-      pytestFlagsArray = old.pytestFlagsArray ++ [
-        "--ignore=tests/test_ignore.py"
-      ];
-    });
-  };
-in
 stdenv.mkDerivation rec {
   pname = "onnxruntime";
   version = "1.9.1";
@@ -37,7 +27,7 @@ stdenv.mkDerivation rec {
 
   nativeBuildInputs = [ python3 cmake ]
     ++ (with python3Packages; [ numpy pybind11 setuptools wheel ])
-    ++ lib.singleton fixed_onnx;
+    ++ lib.singleton python3Packages.onnx;
   dontUsePytestCheck = true;
   buildInputs = [ zlib ];
 
