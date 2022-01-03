@@ -13,10 +13,9 @@ steps:
   - name: clone
     image: alpine/git
     commands:
-      - git clone https://github.com/VergeDX/nixpkgs --depth=1
-      - git checkout tdesktop
+      - git clone https://github.com/VergeDX/nixpkgs tdesktop --depth=1
 
   - name: nix-build
     image: nixos/nix
     commands:
-      - nix-build -E '(import <nixpkgs> { }).tdesktop'
+      - nix-build -A tdesktop
