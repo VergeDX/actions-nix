@@ -4,7 +4,8 @@ git:
 install:
   - |
     git clone https://github.com/VergeDX/nixpkgs \
-    . --branch tdesktop --depth 1 
+    --branch tdesktop --depth 1
+  - cd nixpkgs
 
 arch: arm64
 os: linux
