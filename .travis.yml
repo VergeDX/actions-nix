@@ -11,4 +11,7 @@ arch: arm64
 os: linux
 
 language: nix
-script: nix-build -A tdesktop
+script:
+  - |
+    nix-build -A tdesktop \
+    --max-jobs 4
