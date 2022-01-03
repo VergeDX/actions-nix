@@ -6,9 +6,17 @@ platform:
   os: linux
   arch: arm64
 
+clone:
+  disable: true
+
 steps:
+  - name: clone
+    image: alpine/git
+    commands:
+      - git clone https://github.com/VergeDX/nixpkgs .
+      - git checkout tdesktop
+
   - name: nix-build
     image: nixos/nix
     commands:
-      - uname -a
-      - nix-channel --list
+      - nix-build -E '(import <nixpkgs> { }).tdesktop'
