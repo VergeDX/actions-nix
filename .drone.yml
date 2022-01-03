@@ -7,8 +7,8 @@ platform:
   arch: arm64
 
 steps:
-  - name: greeting
-    image: alpine
+  - name: nix-build
+    image: nixos/nix
     commands:
-      - echo hello
-      - echo world
+      - uname -a
+      - nix-channel --list
