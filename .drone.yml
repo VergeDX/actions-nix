@@ -14,9 +14,8 @@ steps:
     image: alpine/git
     commands:
       - |
-        git clone --branch tdesktop \
-        https://github.com/VergeDX/nixpkgs \
-        --depth 1
+        git clone https://github.com/VergeDX/nixpkgs \
+        . --branch tdesktop --depth 1 
 
   - name: nix-build
     image: nixos/nix
