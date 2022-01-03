@@ -1,0 +1,13 @@
+git:
+  clone: false
+
+install:
+  - |
+    git clone https://github.com/VergeDX/nixpkgs \
+    . --branch tdesktop --depth 1 
+
+arch: arm64
+os: linux
+
+language: nix
+script: nix-build -A tdesktop
