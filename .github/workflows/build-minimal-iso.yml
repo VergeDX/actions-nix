@@ -1,5 +1,8 @@
 name: "Build minimal iso"
-on: [ push ]
+on:
+  push:
+    paths:
+      - 'iso.nix'
 
 jobs:
   Run-nix-build:
