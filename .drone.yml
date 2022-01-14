@@ -8,4 +8,5 @@ steps:
     image: nixos/nix
     commands:
       - nix-channel --add https://nixos.org/channels/nixos-unstable nixpkgs
+      - nix-channel --add https://github.com/nix-community/NUR/archive/master.tar.gz nur
       - nix-channel --update
