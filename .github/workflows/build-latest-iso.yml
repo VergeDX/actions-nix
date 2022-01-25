@@ -1,8 +1,6 @@
 name: "Build latest iso"
 on:
   push:
-    paths:
-      - "iso.nix"
 
 jobs:
   Run-nix-build:
