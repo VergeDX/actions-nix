@@ -12,7 +12,7 @@ jobs:
           extra_nix_config: |
             access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
 
-      - run: nix build .#iso
+      - run: nix build .#iso -vL
       - uses: actions/upload-artifact@v2
         with:
           path: ./result/iso
