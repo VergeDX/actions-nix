@@ -13,7 +13,8 @@
         modules = [ "${nixos}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix" ]
           ++ [ "${nixos}/nixos/modules/installer/cd-dvd/channel.nix" ]
           ++ [{ boot.kernelPackages = pkgs.linuxPackages_latest; }] ++
-          [{ hardware.firmware = with pkgs; [ firmwareLinuxNonfree ]; }];
+          [{ hardware.firmware = with pkgs; [ firmwareLinuxNonfree ]; }]
+          ++ [{ imports = [ ./issuecomment-890841662.nix ]; }];
       }).config.system.build.isoImage;
     });
 }
